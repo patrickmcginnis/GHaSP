@@ -55,30 +55,30 @@ class Player:
                         bestStreak = streakRounds      
         return bestStreak 
     
-    def bestTournament(self):
-        print("Printing best 4 consecutive rounds based on score:")
+    def bestTournament(self, k):
+        print("Printing best %d consecutive rounds based on score:" % k)
+        streak = self.calculateStreaks(k, "score")
         print("With a total of ",  sumScores(streak))
         print(70 * "-")
-        streak = self.calculateStreaks(4, "score")
-        for i in range(4):
+        for i in range(k):
             print(streak[i]) 
         print(70 * "-")
 
-    def bestPutts(self):
-        print("Printing best 4 consecutive rounds based on putting:")
+    def bestPutts(self, k):
+        print("Printing best %d consecutive rounds based on putting:" % k)
+        streak = self.calculateStreaks(k, "putts")
         print("With a total of ",  sumPutts(streak))
         print(70 * "-")
-        streak = self.calculateStreaks(4, "putts")
-        for i in range(4):
+        for i in range(k):
             print(streak[i]) 
         print(70 * "-")
 
-    def bestIndex(self):
-        print("Printing best handicap acheived:")
-        print("With an index of %2.1f" %  (sumIndex(streak)/20))
+    def bestIndex(self, k):
+        print("Printing best handicap acheived through %d rounds:"% k)
+        streak = self.calculateStreaks(k, "index")
+        print("With an index of %2.1f" %  (sumIndex(streak)/k))
         print(70 * "-")
-        streak = self.calculateStreaks(20, "index")
-        for i in range(20):
+        for i in range(k):
             print(streak[i]) 
         print(70 * "-")
 

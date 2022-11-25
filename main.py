@@ -25,8 +25,8 @@ for i in range(200):
 john.printAllRounds()
 john.printHandicapRounds()
 print(john)
-john.bestTournament()
-john.bestPutts()
-john.bestIndex()
+john.bestTournament(4) 
+john.bestPutts(4)
+john.bestIndex(20)
 
 print()
