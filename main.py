@@ -1,6 +1,7 @@
+import random
 import Player
 import Round
-import random
+
 
 # This file will be used to create many different golf players and individual rounds for those players 
 # TODO:
@@ -10,7 +11,8 @@ print(4*"\n")
 john = Player.Player("John X", 19)
 print(john)
 
-for i in range(200):
+
+for i in range(2000):
     #creating random scores for the player 
     rating = round(random.uniform(67.1, 78.9), 1)
     score = int(random.randint(-5,10) + rating)
@@ -18,15 +20,14 @@ for i in range(200):
     gir = random.randint(6, 15)
     teeA = random.randint(4, 18)
 
-    john.addRound(Round.Round(rating, score, putts, gir, teeA))
+    john.add_round(Round.Round(i, rating, score, putts, gir, teeA))
 
 
 
-john.printAllRounds()
-john.printHandicapRounds()
+john.print_handicap_rounds()
 print(john)
-john.bestTournament(4) 
-john.bestPutts(4)
-john.bestIndex(20)
+john.best_tournament(4) 
+john.best_putts(4)
+john.best_index(20)
 
 print()
