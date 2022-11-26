@@ -8,7 +8,7 @@ As of writing this there is no front end. This thing operates from the console. 
 
 I would like to mess around with some concurrency so going to build out read/write for files
 
-Create some charts and graphs to track trends
+Create some charts and graphs to track trends.
 
 #### Goal: 
 
