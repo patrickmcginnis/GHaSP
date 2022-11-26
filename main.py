@@ -31,10 +31,10 @@ john.print_handicap_rounds()  # should always show recent most 20
 print(john)  # check out his updated stats
 worst_window = john.sliding_window(4, 0, "score")
 best_window = john.sliding_window(4, 1, "score")
-print("\nBest Window:")
+print("\nBest 4 rounds:")
 print_streak(best_window)
 print("Totals: " + str(Player.sum_streak(best_window, "score")) + "\n")
-print("Worst Window:")
+print("Worst 4 rounds:")
 print_streak(worst_window)
 print("Totals: " + str(Player.sum_streak(worst_window, "score")) + "\n")
 
