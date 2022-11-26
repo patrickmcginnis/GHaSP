@@ -11,8 +11,7 @@ print(4*"\n")
 john = Player.Player("John X", 19)
 print(john)
 
-
-for i in range(2000):
+for i in range(4, 2000):
     #creating random scores for the player 
     rating = round(random.uniform(67.1, 78.9), 1)
     score = int(random.randint(-5,10) + rating)
@@ -21,7 +20,6 @@ for i in range(2000):
     teeA = random.randint(4, 18)
 
     john.add_round(Round.Round(i, rating, score, putts, gir, teeA))
-
 
 
 john.print_handicap_rounds()

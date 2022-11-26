@@ -39,22 +39,22 @@ class Player:
         if(self.get_rounds_played() < k):
             print("Not enough rounds")
             return -1 
-        streakRounds = self.rounds[:k]
-        bestStreak = streakRounds.copy() # make sure to pass by value and not by reference
+        streak_rounds = self.rounds[:k]
+        best_streak = streak_rounds.copy() # make sure to pass by value and not by reference
         for i in self.rounds[k:]:
-            streakRounds.pop(0)
-            streakRounds.append(i)
+            streak_rounds.pop(0)
+            streak_rounds.append(i)
             match stat:                 # need to know which stat we are calculating for the streak
                 case "score":
-                    if(sum_scores(streakRounds) < sum_scores(bestStreak)):
-                        bestStreak = streakRounds
+                    if(sum_scores(streak_rounds) < sum_scores(best_streak)):
+                        best_streak = streak_rounds.copy()
                 case "index":
-                    if(sum_index(streakRounds) < sum_index(bestStreak)):
-                        bestStreak = streakRounds
+                    if(sum_index(streak_rounds) < sum_index(best_streak)):
+                        best_streak = streak_rounds.copy()
                 case "putts":
-                    if(sums_putts(streakRounds) < sums_putts(bestStreak)):
-                        bestStreak = streakRounds      
-        return bestStreak 
+                    if(sums_putts(streak_rounds) < sums_putts(best_streak)):
+                        best_streak = streak_rounds.copy()   
+        return best_streak 
     
     def best_tournament(self, k):
         print("Printing best %d consecutive rounds based on score:" % k)
