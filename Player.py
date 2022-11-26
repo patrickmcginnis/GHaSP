@@ -23,6 +23,7 @@ def sums_putts(r):
         sum += i.get_putts()
     return sum
 
+# Player class allows for unique stat tracking
 class Player:
     rounds_played = 0
     rounds = []
@@ -46,8 +47,8 @@ class Player:
             streak_rounds.append(i)
             match stat:                 # need to know which stat we are calculating for the streak
                 case "score":
-                    if(sum_scores(streak_rounds) < sum_scores(best_streak)):
-                        best_streak = streak_rounds.copy()
+                    if(sum_scores(streak_rounds) < sum_scores(best_streak)):    # these checks see if the streak is better and copy's the new list
+                        best_streak = streak_rounds.copy() 
                 case "index":
                     if(sum_index(streak_rounds) < sum_index(best_streak)):
                         best_streak = streak_rounds.copy()
@@ -108,7 +109,6 @@ class Player:
 
     def get_rounds_played(self):
         return self.rounds_played 
-
     
     def get_handicap(self):
         if(self.cap < 0):
