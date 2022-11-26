@@ -6,11 +6,11 @@ class Round:
 
     def __init__(self, id, courseRating, score, putts, gir, teeA):
         self.u_id = id
-        self.course_rating = courseRating
-        self.score = score
+        self.course_rating = courseRating                               # a course rating is the measure of how difficult it is
+        self.score = score                                              # a score is the number of strokes taken in a round
         self.putts = putts
-        self.gir = gir
-        self.tee_a = teeA
+        self.gir = gir                                                  # a gir is a green in regulation, you have 18 chances to make a gir
+        self.tee_a = teeA                                               # tee accuracy is a measure of where your shot went off the tee
         
     def get_putts(self):
         return self.putts
@@ -27,7 +27,7 @@ class Round:
     def calculate_index(self):
         return self.score - self.course_rating
     
-    def get_index(self):
+    def get_index(self):                                # an index is the difference between the course rating and your individual score
         index = self.score - self.course_rating
         if(index < 0):
             return f"+{index * -1:3.1f}"

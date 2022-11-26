@@ -37,24 +37,24 @@ class Player:
             print("Not enough rounds")
             return -1 
     
-    def sliding_window(self, k, type, stat):
+    def sliding_window(self, k, type, stat):    #k is size of window or the length of the streak, type is best/worst window, stat is the stat to measure
         if(self.get_rounds_played() < k):
             print("Not enough rounds")
             return -1
-        best_streak = self.rounds[:k].copy()
-        current_window = self.rounds[:k].copy()
-        sum_stat = sum_streak(best_streak, stat)
+        best_streak = self.rounds[:k].copy()        # take the first k elements and store a copy
+        current_window = self.rounds[:k]     # create a copy to iterate over *I think I can just use reference here*
+        sum_stat = sum_streak(best_streak, stat)    
         max_sum_stat = sum_stat
-        for r in self.rounds[k:]:
+        for r in self.rounds[k:]:                   #start moving the window
             current_window.pop(0)
             current_window.append(r)
-            match stat:
+            match stat:                             
                 case "score":
-                    sum_stat = sum_stat - current_window[0].get_score() + r.get_score()
-                    if(type):
+                    sum_stat = sum_stat - current_window[0].get_score() + r.get_score()     
+                    if(type):                                                              
                         if(sum_stat <= max_sum_stat):
                             max_sum_stat = sum_stat
-                            best_streak = current_window.copy()
+                            best_streak = current_window.copy()                             # make a copy of the new window of rounds we want as conditions were met
                     else:
                         if(sum_stat >= max_sum_stat):
                             max_sum_stat = sum_stat
