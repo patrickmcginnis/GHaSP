@@ -42,7 +42,7 @@ class Player:
             print("Not enough rounds")
             return -1
         best_streak = self.rounds[:k].copy()        # take the first k elements and store a copy
-        current_window = self.rounds[:k]     # create a copy to iterate over *I think I can just use reference here*
+        current_window = self.rounds[:k].copy()     # create a copy to iterate over *I think I can just use reference here*
         sum_stat = sum_streak(best_streak, stat)    
         max_sum_stat = sum_stat
         for r in self.rounds[k:]:                   #start moving the window
