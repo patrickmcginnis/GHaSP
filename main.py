@@ -7,10 +7,11 @@ import Round
 # TODO:
 #       Create some big data, Talking 5000 players with 300 rounds each
 #       When creating these players need to develop a probability to get some more genuine looking scores *although this isn't important it would be cool to code up*
-print(4*"\n")
+print(2*"\n")
 john = Player.Player("John X", 19)
 print(john)
 
+print("...Adding Rounds\n")
 for i in range(2000):
     #creating random scores for the player 
     rating = round(random.uniform(67.1, 78.9), 1)
