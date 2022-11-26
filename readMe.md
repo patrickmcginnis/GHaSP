@@ -6,10 +6,6 @@ Created by: Patrick McGinnis
 
 As of writing this there is no front end. This thing operates from the console. Need to implement a front end preferably through web.
 
-I would like to mess around with some concurrency so going to build out read/write for files
-
-Create some charts and graphs to track trends.
-
 #### Goal: 
 
 Create a scalable web application individuals can use to monitor and analyze their statistics from previous golf rounds.
