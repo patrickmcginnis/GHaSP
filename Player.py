@@ -77,7 +77,12 @@ class Player:
     def best_index(self, k):
         print("Printing best handicap acheived through %d rounds:"% k)
         streak = self.calculate_streaks(k, "index")
-        print("With an index of %2.1f" %  (sum_index(streak)/k))
+        dex = sum_index(streak)/k
+        if(dex < 0):
+            i =  f"+{dex * -1:3.1f}"
+        else:
+            i =  f"{dex:4.1f}"
+        print("With an index of: ", i)
         print(70 * "-")
         for i in range(k):
             print(streak[i]) 
