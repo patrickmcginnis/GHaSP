@@ -34,15 +34,9 @@ class Player:
         self.name = name
         self.age = age
 
-<<<<<<< HEAD
-    # Currently learning priority queues for top scores
-    def calculate_top_x(self, k, stat):     # Sort algorithm to find top k rounds for the selected stat
-        if(self.get_rounds_played() < k):
-=======
     # Sort algorithm to find top k rounds for the selected stat
     def calculate_top_x(self, k, stat):
         if (self.get_rounds_played() < k):
->>>>>>> 416bd4bae51ee694a179a5606e3b94bbedf10a31
             print("Not enough rounds")
             return -1
 
